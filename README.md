@@ -1,18 +1,16 @@
-# sv
+# Hot Take Room
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This project is a real-time application for sharing and voting on "hot takes". It's built with SvelteKit and Convex.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Frontend:** [SvelteKit](https://kit.svelte.dev/) with [Svelte 5 Runes](https://svelte.dev/blog/runes)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Shadcn-Svelte](https://www.shadcn-svelte.com/)
+- **Backend & Database:** [Convex](https://www.convex.dev/)
+- **Authentication:** [Clerk](https://clerk.com/)
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+For more details on the project's principles and architecture, see the [constitution](/.specify/memory/constitution.md).
 
 ## Developing
 
@@ -34,5 +32,3 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

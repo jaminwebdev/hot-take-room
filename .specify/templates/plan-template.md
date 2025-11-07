@@ -11,27 +11,27 @@
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: TypeScript, Svelte 5
+**Primary Dependencies**: SvelteKit, Convex, Clerk, Shadcn-Svelte, Tailwind CSS
+**Storage**: Convex
+**Testing**: Optional (Playwright for E2E, Vitest for unit tests if deemed necessary)
+**Target Platform**: Web
+**Project Type**: Web Application
+**Performance Goals**: Real-time updates, fast page loads
+**Constraints**: Must adhere to the project constitution.
+**Scale/Scope**: TBD
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **I. Clean Code**: Does the proposed solution favor early returns and avoid deep nesting?
+- **II. Simple & Responsive UX**: Is the UI/UX simple, intuitive, and responsive? Is it built with Tailwind CSS?
+- **III. Svelte 5 Runes & SvelteKit**: Does the implementation use Svelte 5 runes and follow SvelteKit best practices?
+- **IV. Shadcn-Svelte Components**: Are Shadcn-Svelte components used where appropriate?
+- **V. Clerk for Authentication**: Is Clerk used for all authentication?
+- **VI. Convex Backend**: Is Convex used for the backend and database?
+- **VII. Pragmatic Testing**: Is the testing approach appropriate for the feature's complexity and criticality?
 
 ## Project Structure
 

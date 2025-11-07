@@ -1,50 +1,48 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 → 1.1.0
+- List of modified principles: None
+- Added sections:
+    - VII. Pragmatic Testing
+- Removed sections: None
+- Templates requiring updates:
+    - ✅ .specify/templates/plan-template.md
+    - ✅ .specify/templates/spec-template.md
+    - ✅ .specify/templates/tasks-template.md
+- Follow-up TODOs: None
+-->
+# Hot Take Room Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean Code
+Code should be written for clarity and maintainability. This includes prioritizing early returns (guard clauses) over deeply nested conditional blocks.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Simple & Responsive UX
+The user experience must be simple and intuitive. All UI must be fully responsive and built using Tailwind CSS for styling.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Svelte 5 Runes & SvelteKit
+All frontend development must use Svelte 5 runes and adhere to the latest SvelteKit best practices. This ensures we are using the most modern and efficient features of the framework.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Shadcn-Svelte Components
+Utilize components from the Shadcn-Svelte library whenever possible. This promotes UI consistency, reduces development time, and maintains a high-quality aesthetic.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Clerk for Authentication
+User authentication and session management are to be handled exclusively by Clerk. Refer to the SvelteKit quickstart guide for implementation details.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Convex Backend
+The entire backend, including the database and serverless functions, will be built on the Convex real-time platform. Refer to the official Convex documentation and Svelte integration guides.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### VII. Pragmatic Testing
+While testing is important, Test-Driven Development (TDD) is not a requirement at this stage. Focus on manual testing during development and add automated tests (E2E or unit) for critical paths and complex logic as needed. The priority is rapid iteration.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Technology Stack
+The technology stack is fixed to ensure consistency and leverage modern, efficient tools. See the Core Principles for the primary technologies. For specific implementation guidance, refer to the documents in the `/instructions` directory.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+Development should follow a feature-branch workflow. All new features or bug fixes must be developed in a separate branch and submitted as a pull request for review. Code must adhere to all principles outlined in this constitution.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution is the single source of truth for project standards and practices. All code contributions will be evaluated for compliance with these principles. Amendments to this constitution require a pull request and team consensus.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2025-11-07 | **Last Amended**: 2025-11-07
