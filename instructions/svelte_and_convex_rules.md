@@ -2,7 +2,7 @@
 
 This document outlines the specific architectural pattern used in this project to integrate the SvelteKit frontend with the Convex backend. The pattern ensures that data access is secure and efficient.
 
-In this project we use Svelte and the convex-svelte package together. 
+In this project we use Svelte and the convex-svelte package together.
 
 Here's the documentation/github repo for this package: https://github.com/get-convex/convex-svelte
 
@@ -11,6 +11,7 @@ Here's the documentation/github repo for this package: https://github.com/get-co
 The core of the pattern is a **client-driven authorization model**. The SvelteKit client is responsible for obtaining the current user's identity (whether that be through a +page.server.ts/+layout.server.ts loader or a front-end auth client) and passing the `user_id` to Convex queries and mutations. The Convex backend then uses this `user_id` to both filter data and, crucially, to authorize access to specific documents.
 
 This creates a clear separation of concerns:
+
 - **SvelteKit (Client):** Manages UI, user authentication state, and calls Convex functions with the necessary user context.
 - **Convex (Backend):** Defines data schema, business logic, and enforces strict data access rules based on the user identity provided by the client.
 
@@ -21,7 +22,8 @@ This creates a clear separation of concerns:
 - The user's ID is obtained on the client through PageData or a client-auth library (in the examples below, it happens to be Clerk).
 - This `user_id` is then passed as a prop to any components that need to interact with user-specific data.
 
-*Example (`TaskCard.svelte`):*
+_Example (`TaskCard.svelte`):_
+
 ```svelte
 <script lang="ts">
 	import { useClerkContext } from 'svelte-clerk/client';
@@ -40,7 +42,8 @@ This creates a clear separation of concerns:
 - The `convex-svelte` package's `useQuery` hook is used to subscribe to Convex queries.
 - The `user_id` is passed as an argument to the query, which the backend uses to fetch only the relevant data.
 
-*Example (`TaskList.svelte`):*
+_Example (`TaskList.svelte`):_
+
 ```svelte
 <script lang="ts">
 	import { useQuery } from 'convex-svelte';
@@ -58,7 +61,8 @@ This creates a clear separation of concerns:
 - The `useConvexClient` hook provides a raw client instance.
 - Mutations are called using `client.mutation()`, passing the `user_id` along with other arguments.
 
-*Example (`TaskInput.svelte`):*
+_Example (`TaskInput.svelte`):_
+
 ```svelte
 <script lang="ts">
 	import { useConvexClient } from 'convex-svelte';
@@ -81,7 +85,8 @@ This is the most critical piece of the pattern for ensuring security.
 
 - **For Queries:** The backend uses the `user_id` to filter results using a database index. This is efficient and ensures users only see their own data.
 
-*Example (`tasks.ts` - `get` query):*
+_Example (`tasks.ts` - `get` query):_
+
 ```typescript
 export const get = query({
 	args: { user_id: v.string() },
@@ -94,9 +99,10 @@ export const get = query({
 });
 ```
 
-- **For Mutations/Actions:** For any operation that modifies or deletes a *specific* document, a dedicated authorization helper (`authorizeTaskAccess`) is used. This function retrieves the document and verifies that the `user_id` from the client matches the `user_id` stored on the document. If they don't match, it throws an error, preventing the operation from proceeding.
+- **For Mutations/Actions:** For any operation that modifies or deletes a _specific_ document, a dedicated authorization helper (`authorizeTaskAccess`) is used. This function retrieves the document and verifies that the `user_id` from the client matches the `user_id` stored on the document. If they don't match, it throws an error, preventing the operation from proceeding.
 
-*Example (`tasks.ts` - `authorizeTaskAccess` and `update` mutation):*
+_Example (`tasks.ts` - `authorizeTaskAccess` and `update` mutation):_
+
 ```typescript
 async function authorizeTaskAccess(
 	ctx: { db: DatabaseReader },

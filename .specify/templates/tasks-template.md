@@ -1,5 +1,5 @@
 ---
-description: "Task list template for feature implementation"
+description: 'Task list template for feature implementation'
 ---
 
 # Tasks: [FEATURE NAME]
@@ -25,21 +25,21 @@ description: "Task list template for feature implementation"
 - **Convex Functions**: `convex/`
 - **Tests**: `tests/` or `e2e/`
 
-<!-- 
+<!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
-  
+
   The /speckit.tasks command MUST replace these with actual tasks based on:
   - User stories from spec.md (with their priorities P1, P2, P3...)
   - Feature requirements from plan.md
   - Entities from data-model.md
   - Endpoints from contracts/
-  
+
   Tasks MUST be organized by user story so each story can be:
   - Implemented independently
   - Tested independently
   - Delivered as an MVP increment
-  
+
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
@@ -91,7 +91,6 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T010 [P] [US1] E2E test for [user journey] in `e2e/test-story-1.spec.ts`
 - [ ] T011 [P] [US1] Unit test for [function] in `tests/unit/test-story-1.spec.ts`
 
-
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
 ---
@@ -108,7 +107,7 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T023 [US2] Integrate with User Story 1 components (if needed)
 
 ### Tests for User Story 2 (OPTIONAL)
-- [ ] T018 [P] [US2] E2E test for [user journey] in `e2e/test-story-2.spec.ts`
 
+- [ ] T018 [P] [US2] E2E test for [user journey] in `e2e/test-story-2.spec.ts`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
