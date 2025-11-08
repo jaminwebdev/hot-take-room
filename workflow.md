@@ -1,0 +1,4 @@
+- start convex with `npx convex dev`
+- start sveltekit with `npm run dev`
+- /specify + prompt -> /clarify + prompt -> /plan -> /tasks -> /analyze with Gemini
+- /implement with Codex
